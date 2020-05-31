@@ -1,0 +1,8 @@
+{
+  "name": "fjanser-spring-ionic-app",
+  "app_id": "",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  }
+}
