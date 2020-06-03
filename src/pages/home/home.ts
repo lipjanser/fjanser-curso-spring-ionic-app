@@ -12,7 +12,7 @@ export class HomePage {
 
   constructor(public navCtrl: NavController) {
     this.pages = [
-      { title: 'LOGIN', component:'LoginFlatPage' },
+      { title: 'Home', component:'HomePage' },
     ];
   }
 

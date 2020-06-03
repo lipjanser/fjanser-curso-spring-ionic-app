@@ -29,6 +29,6 @@ export class LoginFlatPage {
   /*  Todo override this function with your logic
   =================================================*/
   onLogin = (params): void => {
-    this.toastCtrl.presentToast('Login Now');
+    
   };
 }

@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { IonicPage } from 'ionic-angular';
+import { IonicPage, NavController } from 'ionic-angular';
 
 @IonicPage()
 @Component({
@@ -16,21 +16,13 @@ export class LoginFlat {
     public isUsernameValid: boolean;
     public isPasswordValid: boolean;
     
-    constructor() { 
+    constructor(public navCtrl: NavController) { 
         this.isUsernameValid= true;
         this.isPasswordValid = true;
     }
 
     onEvent = (event: string): void => {
-        if (event == "onLogin" && !this.validate()) {
-            return ;
-        }
-        if (this.events[event]) {
-            this.events[event]({
-                'username': this.username,
-                'password': this.password
-            });
-        }        
+        this.navCtrl.push("CategoriasPage");   
     }
 
     validate():boolean {
