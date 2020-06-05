@@ -1,13 +1,14 @@
 import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 import { API_CONFIG } from "../config/api.config";
-import { Observable } from "rxjs/Rx";
 import { CredenciaisDTO } from "../models/credenciais.dto";
+import { StorageService } from "./storage.service";
+import { LocalUser } from "../models/local_user";
 
 @Injectable()
 export class AuthService {
     
-    constructor(public http: HttpClient){
+    constructor(public http: HttpClient, public storage: StorageService) {
         
     }
 
@@ -18,6 +19,20 @@ export class AuthService {
                                   observe: 'response',
                                   responseType: 'text'
                               });
+    }
+
+    successfulLogin(authorizationValue: string) {
+        let tok = authorizationValue.substring(7); // Removendo texto 'Bearer '
+        let user: LocalUser = {
+            token: tok,
+            email: ""
+        };
+
+        this.storage.setLocalUser(user);
+    }
+
+    logout() {
+        this.storage.setLocalUser(null);
     }
 
     forgotPassword() {
