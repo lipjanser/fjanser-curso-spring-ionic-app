@@ -8,7 +8,7 @@ export class ToastService {
 
   presentToast(message: string) {
     let toastItem = {
-      "duration": 1000,
+      "duration": 5000,
       "position": "buttom"
     };
     toastItem["message"] = message;
