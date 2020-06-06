@@ -14,6 +14,7 @@ import { StorageService } from '../services/storage.service';
 import { ToastService } from '../services/toast.service';
 import { LoadingService } from '../services/loading.service';
 import { ClienteService } from '../services/domain/cliente.service';
+import { AuthInterceptorProvider } from '../interceptors/auth-interceptor';
 
 @NgModule({
   declarations: [
@@ -33,12 +34,13 @@ import { ClienteService } from '../services/domain/cliente.service';
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     CategoriaService,
-    ErrorInterceptorProvider,
     AuthService,
     StorageService,
     ToastService,
     LoadingService,
-    ClienteService
+    ClienteService,
+    AuthInterceptorProvider,
+    ErrorInterceptorProvider
   ]
 })
 export class AppModule {}
