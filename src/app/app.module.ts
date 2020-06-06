@@ -12,6 +12,8 @@ import { ErrorInterceptorProvider } from '../interceptors/error-interceptor';
 import { AuthService } from '../services/auth.service';
 import { StorageService } from '../services/storage.service';
 import { ToastService } from '../services/toast.service';
+import { LoadingService } from '../services/loading.service';
+import { ClienteService } from '../services/domain/cliente.service';
 
 @NgModule({
   declarations: [
@@ -34,7 +36,9 @@ import { ToastService } from '../services/toast.service';
     ErrorInterceptorProvider,
     AuthService,
     StorageService,
-    ToastService
+    ToastService,
+    LoadingService,
+    ClienteService
   ]
 })
 export class AppModule {}
