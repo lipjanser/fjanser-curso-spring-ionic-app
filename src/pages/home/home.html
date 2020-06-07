@@ -1,19 +1,17 @@
 <ion-content>
-  <h3>Apperture Store</h3>
+  <h3>APPERTURE STORE</h3>
 
   <img src="assets/imgs/ApertureScience.gif" alt="logo">
 
-  <form style="align-self: center;">
+  <form>
     <ion-item>
-      <ion-label stacked>Email</ion-label>
-      <ion-input [(ngModel)]="creds.email" name="email" type="text"></ion-input>
+      <ion-input placeholder="Email" [(ngModel)]="creds.email" name="email" type="text"></ion-input>
     </ion-item>
     <ion-item>
-      <ion-label stacked>Password</ion-label>
-      <ion-input [(ngModel)]="creds.senha" name="senha" type="password"></ion-input>
+      <ion-input placeholder="Password" [(ngModel)]="creds.senha" name="senha" type="password"></ion-input>
     </ion-item>
     <button ion-button block (click)="login()">Login</button>
+    <button ion-button block outline>Register</button>
   </form>
-  <button ion-button block outline>Register</button>
-  <p no-margin no-padding>Forgot password? <a>Reset your password</a> </p>
+  <p>Forgot password? <a onclick="">Reset your password</a> </p>
 </ion-content>
