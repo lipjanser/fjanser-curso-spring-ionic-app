@@ -38,7 +38,6 @@ export class HomePage {
         this.navCtrl.setRoot('CategoriasPage');
         this.loading.hide();
       },error => {
-        this.alert.presentToast(`${error.status} - ${error.error}:  ${error.message}`);
         this.loading.hide();
       });
   }
