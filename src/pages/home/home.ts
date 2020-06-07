@@ -54,8 +54,8 @@ export class HomePage {
       });
   }
 
-  register() {
-    
+  signup() {
+    this.navCtrl.push('SignupPage');
   }
 
 }
