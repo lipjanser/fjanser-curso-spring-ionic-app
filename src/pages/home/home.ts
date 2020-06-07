@@ -30,6 +30,18 @@ export class HomePage {
     this.menu.swipeEnable(true);
   }
 
+  ionViewDidEnter() {
+    this.loading.show();
+    this.auth.refreshToken()
+      .subscribe(response => {
+        this.auth.successfulLogin(response.headers.get('Authorization'));
+        this.navCtrl.setRoot('CategoriasPage');
+        this.loading.hide();
+      },error => {
+        this.loading.hide();
+      });
+  }
+
   login() {
     this.loading.show();
     this.auth.authenticate(this.creds)
