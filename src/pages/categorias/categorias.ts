@@ -30,4 +30,8 @@ export class CategoriasPage {
     console.log('ionViewDidLoad CategoriasPage');
   }
 
+  showProdutos() {
+    this.navCtrl.push('ProdutosPage');
+  }
+
 }
